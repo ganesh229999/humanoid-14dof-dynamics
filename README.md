@@ -1,29 +1,65 @@
 # 🤖 Humanoid Dual-Arm Dynamic Modelling & Simulation
-
+ 
 <div align="center">
-
-![MATLAB](https://img.shields.io/badge/MATLAB-R2022b+-orange?style=for-the-badge&logo=mathworks&logoColor=white)
-![DOF](https://img.shields.io/badge/DOF-14_(7+7)-blue?style=for-the-badge)
-![Algorithm](https://img.shields.io/badge/Algorithm-Recursive_Newton--Euler-green?style=for-the-badge)
-![Base](https://img.shields.io/badge/Base-Fixed_%26_Mobile-purple?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
+ 
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2022b%2B-orange?style=for-the-badge&logo=mathworks&logoColor=white)](https://www.mathworks.com/products/matlab.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://github.com/ganesh229999/humanoid-14dof-dynamics/blob/master/LICENSE)
+[![DOF](https://img.shields.io/badge/DOF-14_(7%2B7)-blue?style=for-the-badge)](#robot-specification)
+[![Algorithm](https://img.shields.io/badge/Algorithm-Recursive_Newton--Euler-green?style=for-the-badge)](#mathematical-foundation)
+[![Base](https://img.shields.io/badge/Base-Fixed_%26_Mobile-purple?style=for-the-badge)](#simulation-tasks)
+ 
 <br/>
-
+ 
 **A complete MATLAB implementation of Recursive Newton-Euler (RNE) dynamics for a 14-DOF dual-arm humanoid robot — supporting both fixed-base and mobile-base configurations with cooperative object manipulation.**
-
+ 
 *Developed during a research internship at the Defence Research & Development Organisation (DRDO), India.*
-
-<br/>
-
+ 
+</div>
+ 
+---
+ 
+## 🦾 Robot Architecture
+ 
 ```
-        Arm A (Right)          Arm B (Left)
-        ┌─────────┐            ┌─────────┐
-  J1────J2────J3──J4    J4──J3────J2────J1
-  │  Shoulder  │  Elbow  │  Elbow  │  Shoulder  │
-              J5────J6────J7    J7────J6────J5
-              │  Forearm  │ Wrist │  Wrist  │  Forearm  │
-                         EE    EE
+                        BASE FRAME (Torso/Spine)
+                               │
+               ┌───────────────┴───────────────┐
+               │                               │
+         ARM A (Right)                   ARM B (Left)
+               │                               │
+          J1 – Shoulder Flex/Ext          J1 – Shoulder Flex/Ext
+          │    (d₁ = +0.318 m)            │    (d₁ = –0.318 m)
+          │                               │
+          J2 – Shoulder Abd/Add           J2 – Shoulder Abd/Add
+          │                               │
+          J3 – Shoulder Int/Ext Rot       J3 – Shoulder Int/Ext Rot
+          │    (d₂ = –0.251 m)            │    (d₂ = –0.251 m)
+          │                               │
+          J4 – Elbow Flex/Ext             J4 – Elbow Flex/Ext
+          │                               │
+          J5 – Forearm Pro/Sup            J5 – Forearm Pro/Sup
+          │    (d₃ = –0.234 m)            │    (d₃ = –0.234 m)
+          │                               │
+          J6 – Wrist Flex/Ext             J6 – Wrist Flex/Ext
+          │                               │
+          J7 – Wrist Rad/Ulnar Dev        J7 – Wrist Rad/Ulnar Dev
+          │    (d₄ = –0.168 m)            │    (d₄ = –0.168 m)
+          │                               │
+         [EE]– Tool Flange               [EE]– Tool Flange
+               (d₅ = –0.209 m)                (d₅ = –0.209 m)
+               │                               │
+               └───────────────┬───────────────┘
+                               │
+                      OBJECT / PAYLOAD
+                   (Cooperative Manipulation)
+```
+ 
+> **14 DOF total** — 7 revolute joints per arm. Arm A and B share identical
+> kinematic structure; only the shoulder lateral offset **d₁** changes sign,
+> making the system perfectly symmetric about the torso midplane.
+> Gravity acts along the **−X axis** of the base frame.
+ 
+---
 ```
 
 </div>
