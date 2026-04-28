@@ -1,0 +1,35 @@
+# MATLAB generated files
+*.asv
+*.m~
+*.mex*
+*.mexw64
+*.mexmaci64
+*.mexglx
+slprj/
+*.slxc
+*.autosave
+
+# Simulink cache & build
+codegen/
+work/
+
+# Output data files (large — don't commit raw data)
+*.xlsx
+*.mat
+*.csv
+
+# Exceptions — keep example/template data files if any
+!docs/example_data/*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+*.swp
+*~
+
+# Log files
+*.log
