@@ -473,7 +473,7 @@ Inertia:  Computed analytically from solid-cylinder formula
  
 ## 📊 Results & Visualisation
  
-> All results generated in **MATLAB R2024b Academic** on Intel Core i-series.
+> All results generated in **MATLAB R2024b Academic** on Intel Core i5-series 10th Gen.
 > Benchmark: **1000 RNE calls in 0.85 s → 0.847 ms/call → ~1181 Hz single-arm.**
  
 ---
