@@ -59,7 +59,7 @@
 > making the system perfectly symmetric about the torso midplane.
 > Gravity acts along the **−X axis** of the base frame.
  
----
+
 ```
 
 </div>
