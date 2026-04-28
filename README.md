@@ -1,12 +1,12 @@
 # 🤖 Humanoid Dual-Arm Dynamic Modelling & Simulation
  
 <div align="center">
+ 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2022b%2B-orange?style=for-the-badge&logo=mathworks&logoColor=white)](https://www.mathworks.com/products/matlab.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://github.com/ganesh229999/humanoid-14dof-dynamics/blob/master/LICENSE)
 [![DOF](https://img.shields.io/badge/DOF-14_(7%2B7)-blue?style=for-the-badge)](#-robot-specification)
 [![Algorithm](https://img.shields.io/badge/Algorithm-Recursive_Newton--Euler-green?style=for-the-badge)](#-mathematical-foundation)
 [![Base](https://img.shields.io/badge/Base-Fixed_%26_Mobile-purple?style=for-the-badge)](#-simulation-tasks)
- 
 <br/>
 **A complete MATLAB implementation of Recursive Newton-Euler (RNE) dynamics for a 14-DOF dual-arm humanoid robot — supporting both fixed-base and mobile-base configurations with cooperative object manipulation.**
  
