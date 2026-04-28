@@ -61,7 +61,7 @@
 > Gravity acts along the **−X axis** of the base frame (Modified DH convention).
  
 ---
----
+
 </div>
 
 ---
