@@ -21,47 +21,47 @@
 ## 🦾 Robot Architecture
  
 ```
-                        BASE FRAME (Torso/Spine)
-                               │
-               ┌───────────────┴───────────────┐
-               │                               │
-         ARM A (Right)                   ARM B (Left)
-               │                               │
-          J1 – Shoulder Flex/Ext          J1 – Shoulder Flex/Ext
-          │    (d₁ = +0.318 m)            │    (d₁ = –0.318 m)
-          │                               │
-          J2 – Shoulder Abd/Add           J2 – Shoulder Abd/Add
-          │                               │
-          J3 – Shoulder Int/Ext Rot       J3 – Shoulder Int/Ext Rot
-          │    (d₂ = –0.251 m)            │    (d₂ = –0.251 m)
-          │                               │
-          J4 – Elbow Flex/Ext             J4 – Elbow Flex/Ext
-          │                               │
-          J5 – Forearm Pro/Sup            J5 – Forearm Pro/Sup
-          │    (d₃ = –0.234 m)            │    (d₃ = –0.234 m)
-          │                               │
-          J6 – Wrist Flex/Ext             J6 – Wrist Flex/Ext
-          │                               │
-          J7 – Wrist Rad/Ulnar Dev        J7 – Wrist Rad/Ulnar Dev
-          │    (d₄ = –0.168 m)            │    (d₄ = –0.168 m)
-          │                               │
-         [EE]– Tool Flange               [EE]– Tool Flange
-               (d₅ = –0.209 m)                (d₅ = –0.209 m)
-               │                               │
-               └───────────────┬───────────────┘
-                               │
-                      OBJECT / PAYLOAD
-                   (Cooperative Manipulation)
+                        BASE FRAME (Torso / Spine)
+                                   │
+               ┌───────────────────┴───────────────────┐
+               │                                       │
+         ARM A (Right)                           ARM B (Left)
+               │                                       │
+          J1 – Shoulder Flexion / Extension        J1 – Shoulder Flexion / Extension
+          │    [Lateral offset: +d₁]               │    [Lateral offset: −d₁]
+          │                                        │
+          J2 – Shoulder Abduction / Adduction      J2 – Shoulder Abduction / Adduction
+          │                                        │
+          J3 – Shoulder Internal / External Rot.   J3 – Shoulder Internal / External Rot.
+          │    [Upper-arm length: d₂]              │    [Upper-arm length: d₂]
+          │                                        │
+          J4 – Elbow Flexion / Extension           J4 – Elbow Flexion / Extension
+          │                                        │
+          J5 – Forearm Pronation / Supination      J5 – Forearm Pronation / Supination
+          │    [Forearm length: d₃]                │    [Forearm length: d₃]
+          │                                        │
+          J6 – Wrist Flexion / Extension           J6 – Wrist Flexion / Extension
+          │                                        │
+          J7 – Wrist Radial / Ulnar Deviation      J7 – Wrist Radial / Ulnar Deviation
+          │    [Wrist offset: d₄]                  │    [Wrist offset: d₄]
+          │                                        │
+         [EE] Tool Flange                         [EE] Tool Flange
+               [Tool offset: d₅]                       [Tool offset: d₅]
+               │                                        │
+               └───────────────────┬────────────────────┘
+                                   │
+                          OBJECT / PAYLOAD
+                       (Cooperative Manipulation)
 ```
  
-> **14 DOF total** — 7 revolute joints per arm. Arm A and B share identical
-> kinematic structure; only the shoulder lateral offset **d₁** changes sign,
+> **14 DOF total** — 7 revolute joints per arm following a human-arm analogy.
+> Arm A (right) and Arm B (left) share an identical kinematic structure.
+> Only the shoulder lateral offset **d₁** changes sign between arms,
 > making the system perfectly symmetric about the torso midplane.
-> Gravity acts along the **−X axis** of the base frame.
+> Gravity acts along the **−X axis** of the base frame (Modified DH convention).
  
-
-```
-
+---
+---
 </div>
 
 ---
