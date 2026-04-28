@@ -440,13 +440,18 @@ The dynamic model was validated using three complementary checks:
 
 ### Performance
 
-| Configuration | Timesteps | Wall-clock Time | Rate |
-|---------------|-----------|----------------|------|
-| Fixed base, 1 arm | 500 | ~0.8 s | ~625 steps/s |
-| Fixed base, 2 arms | 500 | ~1.6 s | ~312 steps/s |
-| Mobile base, 2 arms | 500 | ~3.2 s | ~156 steps/s |
+| Configuration | Timesteps | Wall-clock Time | Rate | Per-call |
+|---------------|-----------|----------------|------|----------|
+| Fixed base, 1 arm | 1000 | 0.85 s | 1181 steps/s | **0.847 ms** |
+| Fixed base, 2 arms | 1000 | ~1.70 s | ~588 steps/s | ~1.694 ms |
+| Mobile base, 2 arms | 500 | ~3.20 s | ~156 steps/s | ~6.4 ms |
 
-*Tested on Intel Core i7-11th Gen, MATLAB R2023a, no parallelisation.*
+> ⚡ **Benchmarked on Intel Core i5-10th Gen, MATLAB R2024b Academic.**
+> Single-arm RNE achieves ~1181 Hz — sufficient for 500 Hz dual-arm
+> real-time trajectory planning. For hard 1 kHz real-time control,
+> a C++ port (e.g. Pinocchio) would give 50–100× further speedup.
+
+
 
 ---
 
