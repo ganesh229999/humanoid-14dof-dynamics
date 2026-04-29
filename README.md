@@ -600,7 +600,7 @@ M.Tech — Robotics & AI, COEP Technological University
 Research Intern — DRDO (2024–2025)
  
 📧 deshmukhg21@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/ganeshdeshmukh)
+🔗 [LinkedIn](https://www.linkedin.com/in/ganesh-deshmukh-3a2a1b1b5/)
 📍 Pune, Maharashtra, India
  
 ---
